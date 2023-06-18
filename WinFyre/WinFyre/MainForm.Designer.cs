@@ -87,6 +87,7 @@
             this.Name = "MainForm";
             this.Text = "WinFyre";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.AcceptButton = this.GoButton;
             this.ResumeLayout(false);
             this.PerformLayout();
 

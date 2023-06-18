@@ -32,7 +32,7 @@ namespace Zifmia.FyreVM.Service
         Dictionary<string, string> outputHash;
         string outputJSON;
         byte[] outSaveFile;
-        MemoryStream saveStream;
+        MemoryStream saveStream = new MemoryStream();
         MemoryStream restoreStream;
 
         // The default is to load a game and return with any prologue data...
@@ -97,8 +97,8 @@ namespace Zifmia.FyreVM.Service
                 throw new Exception("Missing game file.");
 
             MemoryStream gameData = new MemoryStream(gameFile);
-           
-            vm = new Engine(gameData);
+
+            vm = new Engine(gameData) { GlkMode = GlkMode.Wrapper };
 
             requestType = VMRequestType.StartGame;
             wrapperState = VMWrapperState.LoadGame;
@@ -350,8 +350,10 @@ namespace Zifmia.FyreVM.Service
             }
         }
 
-        public MemoryStream SaveStream {
-            get {
+        public MemoryStream SaveStream
+        {
+            get
+            {
                 return saveStream;
             }
         }

@@ -340,7 +340,7 @@ namespace FyreVM
         /// initial RAM.</param>
         public Engine(Stream gameFile)
         {
-            image = new UlxImage(gameFile);
+             image = new UlxImage(gameFile);
             outputBuffer = new OutputBuffer();
 
             uint version = (uint)image.ReadInt32(GLULX_HDR_VERSION_OFFSET);

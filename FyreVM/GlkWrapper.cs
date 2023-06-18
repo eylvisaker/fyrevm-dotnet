@@ -323,7 +323,7 @@ namespace FyreVM
                 {
                     LineWantedEventArgs e = new LineWantedEventArgs();
                     LineWanted(this, e);
-                    line = e.Line;
+                    line = e.Line ?? "";
                 }
 
                 byte[] bytes = StringToLatin1(line);

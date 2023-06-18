@@ -1,26 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <OutputType>Library</OutputType>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-    <AssemblyTitle>WinFyre</AssemblyTitle>
-    <Product>WinFyre</Product>
+    <AssemblyTitle>FyreVM</AssemblyTitle>
+    <Product>FyreVM</Product>
     <Copyright>Copyright ©  2014</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Games\ZifmiaSampler.ulx" />
-    <EmbeddedResource Include="Games\FyreVMTester.ulx" />
-    <None Include="Games\Zifmia Support.i7x" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\FyreVM\FyreVM.csproj" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
