@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FyreChannels</RootNamespace>
     <AssemblyName>FyreChannels</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -117,7 +117,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FyreVM.csproj">
+    <ProjectReference Include="..\FyreVM\FyreVM.csproj">
       <Project>{e38aa41f-2ccd-4609-8820-95161669e18a}</Project>
       <Name>FyreVM</Name>
     </ProjectReference>

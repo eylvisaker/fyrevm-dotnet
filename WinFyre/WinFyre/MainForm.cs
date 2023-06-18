@@ -28,12 +28,15 @@ namespace WinFyre
         private void MainForm_Load(object sender, EventArgs e)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream file = assembly.GetManifestResourceStream("WinFyre.Games.FyreVMTester.ulx");
-            byte[] buffer = new byte[file.Length];
-            int result = file.Read(buffer, 0, (int)file.Length);
-            MemoryStream fileData = new MemoryStream(buffer);
+            //Stream file = assembly.GetManifestResourceStream("WinFyre.Games.FyreVMTester.ulx");
+            using (var file = File.OpenRead(@"C:\Users\Erik\Documents\Inform\Projects\TestMultiPlayer.inform\Build\output.ulx"))
+            {
+                byte[] buffer = new byte[file.Length];
+                int result = file.Read(buffer, 0, (int)file.Length);
+                MemoryStream fileData = new MemoryStream(buffer);
 
-            wrapper = new EngineWrapper(buffer);
+                wrapper = new EngineWrapper(buffer);
+            }
 
             AddOutput();
         }
