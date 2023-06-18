@@ -29,12 +29,12 @@ namespace WinFyre
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             Stream file = assembly.GetManifestResourceStream("WinFyre.Games.FyreVMTester.ulx");
-            
-            byte[] buffer = new byte[file.Length];
-                int result = file.Read(buffer, 0, (int)file.Length);
-                MemoryStream fileData = new MemoryStream(buffer);
 
-                wrapper = new EngineWrapper(buffer);
+            byte[] buffer = new byte[file.Length];
+            int result = file.Read(buffer, 0, (int)file.Length);
+            MemoryStream fileData = new MemoryStream(buffer);
+
+            wrapper = new EngineWrapper(buffer);
 
             AddOutput();
         }
