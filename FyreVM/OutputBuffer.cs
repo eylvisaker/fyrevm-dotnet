@@ -33,11 +33,6 @@ namespace FyreVM
         /// <summary>
         /// Gets or sets the current output channel.
         /// </summary>
-        /// <remarks>
-        /// If the output channel is changed to any channel other than
-        /// <see cref="OutputChannel.Main"/>, the channel's contents will be
-        /// cleared first.
-        /// </remarks>
         public uint Channel
         {
             get { return channel; }
@@ -49,8 +44,6 @@ namespace FyreVM
                     if (value != DEFAULT_CHANNEL)
                         if (!channelData.ContainsKey(channel))
                             channelData.Add(channel, new StringBuilder());
-                        else
-                            channelData[channel].Length = 0;
                 }
             }
         }
